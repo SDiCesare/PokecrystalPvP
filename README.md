@@ -61,7 +61,7 @@ Generally:
 
 ## Bugs
 
-**The project is still being tested, but for now no bug was found.**
+**The project is still being tested!**
 
 * The project will not be able to recconnect to bgb emulator automatcally. This is not properly a bug,
   and it will be added as a feature as soon as possible.
