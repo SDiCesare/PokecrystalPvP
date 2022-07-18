@@ -1,50 +1,4 @@
-# Player Enemy AI
-
-## The Project:
-
-The idea of this program is to receive data from a modified rom of pokemon crystal during a battle, and send back the
-action that the AI should do.
-It's like a pvp pokemon, in which one il playing the regular game, and the other controls the AI in battle.
-
-### Features:
-
-* Connect to the game via bgb emulator.
-* Receive battle data, and send back an action from:
-    * A Move (Chosen from the Enemy Pokemon Moves).
-    * Switch to another pokemon in the Enemy Party (only if in Trainer Battle).
-    * Flee from Player (Only if in a Wild Battle).
-
-### Future Feature:
-
-* Use items of the Trainer (only if in Trainer Battle).
-
-## How does it Work:
-
-### The Game:
-
-The Game is modifies for receiving and sending data via cable link during a battle (
-see [Byte Received From Game](<#Byte Received From Game>))\
-The client program is projected for receiving the battle data/battle update, and send back when ready a byte that
-represents the action that the AI will perform during the battle.\
-The files edited from the disassembled project of pokemon crystal are:
-
-* **engine\battle\core.asm:**
-    * All the feature for a linked battle are removed for gaining free space.
-    * All the internal/external clock check are removed. We use only the internal clock.
-* **home\serial.asm:**
-    * All the Serial Interrupt handler were rewritten. Now, it only checks for a client connection with the program, and
-      if the client is connected control the byte received.
-
-### The Serial Interrupt Handler:
-
-The Serial Interrupt Handler of the game now check the byte received from the client and, based on this, control the
-state of connection and the byte received.\
-Generally:
-
-* if the byte send by the game is a byte 0xff, then it means that
-  the connection is interrupted and the battle will start/continue as a normal battle against the game AI.
-* If we are already in a battle and connected to the client, the handler check if the byte is a byte 0x80. If it is,
-  then the Handler resend back the original byte and wait a valid action.
+# Battle Protocol
 
 ## Byte Received From Game
 
@@ -105,7 +59,7 @@ Generally:
 # Byte Expected From Game
 
 * ### 0x01: Dummy Byte
-  Sent back if no particular byte is expected back.
+  Sent back if no byte is expected back, or when the client is receiving data without sending back any significant data.
 * ### BattleActionCode
     * **0x80: Action not Prepared:**  
       If the action is not ready, a value of 0x80 is expected back.
