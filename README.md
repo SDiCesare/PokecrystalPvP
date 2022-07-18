@@ -1,5 +1,7 @@
 # PokecrystalPvP
 
+This project was realized thanks to the repository [pret/pokecrystal](https://github.com/pret/pokecrystal) which contains the pokemon crystal didassembly.
+
 ## The Project
 
 The idea of this program is to receive data from a modified rom of pokemon crystal during a battle, and send back the
@@ -22,7 +24,7 @@ action that the AI should do, like a player vs. player pokemon.
 
 ## Playing the Game
 
-For playing the game with your friend, pls see [INSTALL.MD](https://google.com)
+For playing the game with your friend, pls see [INSTALL.MD](https://github.com/SDiCesare/PokecrystalPvP/main/INSTALL.md)
 
 ## How does it Work
 
