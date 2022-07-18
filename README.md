@@ -57,3 +57,9 @@ Generally:
   the connection is interrupted and the battle will start/continue as a normal battle against the game AI.
 * If we are already in a battle and connected to the client, the handler check if the byte is a byte 0x80. If it is,
   then the Handler resend back the original byte and wait a valid action.
+
+
+## Bugs
+
+The project is still being tested, but for now no bug was found.
+You can write an issue if you ecnounter a bug during playing the game.
