@@ -24,14 +24,14 @@ action that the AI should do, like a player vs. player pokemon.
 
 ## Playing the Game
 
-For playing the game with your friend, pls see [INSTALL.MD](https://github.com/SDiCesare/PokecrystalPvP/main/INSTALL.md)
+For playing the game with your friend, pls see [INSTALL.MD](https://github.com/SDiCesare/PokecrystalPvP/blob/main/INSTALL.md)
 
 ## How does it Work
 
 ### The Game:
 
 The Game is modifies for receiving and sending data via cable link during a battle
-(see [Battle Protocol.MD](httlps://google.com))\
+(see [Battle Protocol.MD](https://github.com/SDiCesare/PokecrystalPvP/blob/main/ServerProject/out/production/ServerProject/com/ike/enemyai/Battle%20Protocol.MD))\
 The client program is projected for receiving the battle data/battle update, and send back when ready a byte that
 represents the action that the AI will perform during the battle.\
 The files edited from the disassembled project of pokemon crystal are:
